@@ -2,7 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => ({
-  mode: env.production ? 'production' : 'development',
+  mode: env && env.production ? 'production' : 'development',
 
   entry: [
     'babel-polyfill',
@@ -10,7 +10,7 @@ module.exports = (env) => ({
   ],
 
   output: {
-    path: path.join(__dirname, 'webclient/build/'),
+    path: path.join(__dirname, 'build/'),
     filename: '[name].bundle.js',
   },
 
@@ -35,12 +35,7 @@ module.exports = (env) => ({
     new CopyWebpackPlugin([
       { from: './src/*.html', flatten: true },
       { from: './src/img/*', to: 'img/', flatten: true },
-      env.browser === 'chrome'
-        ? { from: './src/manifest.chrome.json', to: './build/manifest.json' }
-        : null,
-      env.browser === 'firefox'
-        ? { from: './src/manifest.firefox.json', to: './build/manifest.json' }
-        : null
+      { from: './src/manifest.json', to: './manifest.json' }
     ]),
   ],
 

@@ -1,13 +1,13 @@
 {
   "name": "instaccount",
   "version": "1.0.0",
-  "description": "One-click throwaway accounts",
+  "description": "Quick, disposable accounts for different websites",
   "main": "src/instaccount.js",
   "private": true,
   "scripts": {
     "test": "echo \"No tests yet.\" && exit 1",
-    "build-firefox:dev": "webpack --display-error-details --env.browser=firefox",
-    "build-firefox:prod": "webpack --display-error-details --env.browser=firefox --env.production"
+    "build:dev": "webpack --display-error-details",
+    "build:prod": "webpack --display-error-details --env.production"
   },
   "author": "JavaDog",
   "license": "UNLICENSED",
