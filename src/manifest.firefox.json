@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Instaccount",
+  "version": "1.0.0",
+
+  "description": "Quick, disposable accounts for different websites",
+
+  "icons": {
+    "128": "img/instaccount-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": "http*://*/*",
+      "js": ["something.js"]
+    }
+  ]
+}
