@@ -4,6 +4,13 @@
   "version": "1.0.0",
 
   "description": "Quick, disposable accounts for different websites",
+  "homepage_url": "https://github.com/JavaDogDev/Instaccount",
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
 
   "icons": {
     "128": "img/instaccount-128.png"
