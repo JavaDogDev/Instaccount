@@ -11,8 +11,8 @@
 
   "content_scripts": [
     {
-      "matches": "http*://*/*",
-      "js": ["something.js"]
+      "matches": ["*://*/*"],
+      "js": ["main.bundle.js"]
     }
   ]
 }
