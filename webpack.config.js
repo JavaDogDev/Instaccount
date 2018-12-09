@@ -4,10 +4,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = (env) => ({
   mode: env && env.production ? 'production' : 'development',
 
-  entry: [
-    'babel-polyfill',
-    './src/instaccount.js',
-  ],
+  entry: {
+    'content-script': ['babel-polyfill', './src/content-script/content-script.js'],
+    'popup': ['babel-polyfill', './src/popup/popup.js']
+  },
 
   output: {
     path: path.join(__dirname, 'build/'),
@@ -22,18 +22,14 @@ module.exports = (env) => ({
         query: { presets: ['env', 'stage-2'] },
         resolve: { extensions: ['.js'] },
         loader: 'babel-loader',
-      },
-      {
-        test: /\.css$/,
-        include: [path.resolve(__dirname, '/src')],
-        use: ['style-loader', 'css-loader'],
-      },
+      }
     ],
   },
 
   plugins: [
     new CopyWebpackPlugin([
-      { from: './src/*.html', flatten: true },
+      { from: './src/*/*.html', flatten: true },
+      { from: './src/*/*.css', flatten: true },
       { from: './src/img/*', to: 'img/', flatten: true },
       { from: './src/manifest.json', to: './manifest.json' }
     ]),

@@ -2,7 +2,7 @@
   "name": "instaccount",
   "version": "1.0.0",
   "description": "Quick, disposable accounts for different websites",
-  "main": "src/instaccount.js",
+  "main": "src/popup/popup.js",
   "private": true,
   "scripts": {
     "test": "echo \"No tests yet.\" && exit 1",
