@@ -5,10 +5,15 @@ function listenForRegisterClick() {
     'email'
   ];
 
-  const inputs = inputElements.map(i => document.getElementById(i))
-    .map(label => label.getElementsByTagName('input')[0]);
+  const inputs = inputElements.map(i => document.getElementById(i));
 
-  console.log(inputs);
+  // Register button - click handler
+  document.getElementById('register-button').addEventListener('click', (e) => {
+    const inputVals = {};
+    inputs.forEach(e => inputVals[e.id] = e.value);
+
+    console.log(inputVals);
+  });
 }
 
 function showError(err) {

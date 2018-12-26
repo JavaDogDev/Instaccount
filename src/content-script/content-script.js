@@ -1,5 +1,9 @@
 import browser from 'webextension-polyfill';
 
+/**
+ * This just handles redirecting the current tab to the current
+ * site's homepage after a successful registration + login.
+ */
 (function() {
   /**
    * Check and set a global guard variable.
@@ -11,5 +15,5 @@ import browser from 'webextension-polyfill';
   }
   window.hasRun = true;
 
-  console.log(browser);
+
 })();

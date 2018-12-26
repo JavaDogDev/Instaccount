@@ -20,7 +20,7 @@ html, body {
   border-radius: 3px;
 }
 
-.register-button {
+#register-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,4 +28,5 @@ html, body {
   height: 2em;
   background-color: #0666f7;
   border-radius: 3px;
+  cursor: pointer;
 }

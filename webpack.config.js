@@ -5,7 +5,8 @@ module.exports = (env) => ({
   mode: env && env.production ? 'production' : 'development',
 
   entry: {
-    'content-script': ['babel-polyfill', './src/content-script/content-script.js'],
+    'content-script': './src/content-script/content-script.js',
+    'background-script': ['babel-polyfill', './src/background-script/background-script.js'],
     'popup': ['babel-polyfill', './src/popup/popup.js']
   },
 
